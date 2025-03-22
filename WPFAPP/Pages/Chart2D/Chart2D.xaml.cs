@@ -30,26 +30,6 @@ namespace WPFAPP.Pages.Chart2D
             InitializeComponent();
             chartViewModel.SomeEvent += ChartViewModel_SomeEvent;
         }
-        private void WPFChartViewer1_ViewPortChanged(object sender, WPFViewPortEventArgs e)
-        {
-            if (e.NeedUpdateChart)
-                drawChart((WPFChartViewer)sender);
-        }
-
-        private void drawChart(WPFChartViewer sender)
-        {
-            XYChart _chart = new XYChart(600, 600);
-            _chart.addTitle("2D тепловая карта", "Arial Italic", 15);
-            _chart.setPlotArea(65, 40, 360, 360, -1, -1, -1, unchecked((int)0xc0000000), -1);
-
-            _chart.xAxis().setTitle("T1", "Arial Bold Italic", 10);
-            _chart.yAxis().setTitle("T2", "Arial Bold Italic", 10);
-            _chart.xAxis().setLabelStyle("Arial Bold");
-            _chart.yAxis().setLabelStyle("Arial Bold");
-            _chart.xAxis().setColors(Chart.Transparent);
-            _chart.yAxis().setColors(Chart.Transparent);
-            sender.Chart = _chart;
-        }
 
         private void ChartViewModel_SomeEvent(object? sender, (List<double> x, List<double> y, List<double> z) e)
         {

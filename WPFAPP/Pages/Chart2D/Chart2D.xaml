@@ -9,6 +9,6 @@
       Title="Chart2D">
 
     <Grid>
-        <ChartDirector:WPFChartViewer x:Name="WPFChartViewer1" Width="800" Height="450"  ViewPortChanged="WPFChartViewer1_ViewPortChanged" />
+        <ChartDirector:WPFChartViewer x:Name="WPFChartViewer1" Width="800" Height="450"  />
     </Grid>
 </Page>
